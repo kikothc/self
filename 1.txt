@@ -1,1 +1,1 @@
-liyaya shige biantai
+console.log(yellow)
