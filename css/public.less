@@ -1,0 +1,34 @@
+@color-gray:#555;
+@color-white:#fff;
+@color-border:#ddd;
+@color-blue:#346aff;
+@color-blue-lite:#eff3ff;
+@url:"../img";
+.transition(@property:all,@duration: 1s,@timing-function: ease,@delay:0s){
+  -webkit-transition: @arguments;
+  -moz-transition: @arguments;
+  -ms-transition: @arguments;
+  -o-transition: @arguments;
+  transition: @arguments;
+}
+.pos(@pos:absolute,@left: auto,@right: auto,@top: auto,@bottom: auto,@zIndex: 1){
+  position: @pos;
+  left: @left;
+  right: @right;
+  top: @top;
+  bottom: @bottom;
+  z-index: @zIndex;
+}
+.opacity(@val:1){
+  @result:@val*100;
+  opacity: @val;
+  //less中有的代码解析不了 用下面格式解析 变量在字符串中要用{}括起来
+  filter: ~"alpha(opacity=@{result})";
+}
+.css3(@k,@v){
+  -webkit-@{k}:@v;
+  -moz-@{k}:@v;
+  -ms-@{k}:@v;
+  -o-@{k}:@v;
+  @{k}:@v
+}
